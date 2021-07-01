@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Dashboard</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+   <!-- Custom styles for this template -->
+   <link href="css/navbar-fixed-top.css" rel="stylesheet">
+   <style>
+      button,
+      .btn-primary {
+         background: #b689b0;
+         color: #000;
+      }
+      .emailstyle{
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+   </style>
+
+</head>
+
+<body style="background-color: #fbd1b7;">
+
+   <!-- navbar=================================================================================================> -->
+   <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000232;">
+      <div class="container">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+               aria-expanded="false" aria-controls="navbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">e-Resepi</a>
+         </div>
+
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li><a href="#recipe">MyRecipe</a></li>
+               <li><a href="#logout">Logout</a></li>
+            </ul>
+
+             <!---  <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false"><span id="idSpan"> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        </ul>
+                     </li>
+                  </ul>
+               </div> -->
+             
+         </div>
+      </div>
+   </nav>
+
+   <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #747c94;">
+         <div class="container">
+            <!--div class="well"-->
+            <div class="row">
+               <div class="col-md-12 text-center">
+                  e-Resepi
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- divHome =============================================================> -->
+      <div class="well" id="divHome" style="overflow-x:auto">
+         <h3 class="emailstyle" style="color:black">Welcome <span id="idSpan"></span></h3>
+
+         <div class="w3-content w3-section" style="max-width:500px">
+            <img class="mySlides" src="img/sayur.jpg" style="width:100%">
+            <img class="mySlides" src="img/ikan.jpg" style="width:100%">
+            <img class="mySlides" src="img/rempah.jpg" style="width:100%">
+            <img class="mySlides" src="img/buah.jpeg" style="width:100%">
+            <img class="mySlides" src="img/jus.png" style="width:100%">
+         </div>
+
+         <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+               var i;
+               var x = document.getElementsByClassName("mySlides");
+               for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+               }
+               myIndex++;
+               if (myIndex > x.length) { myIndex = 1 }
+               x[myIndex - 1].style.display = "block";
+               setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+         </script>
+      </div>
+      <!-- add recipe=================================================================================================> -->
+      <div class="well" id="divRecipe" style="display: none">
+         <div class="row">
+            <div class="col-sm-12">
+               <a class="btn btn-primary" href="#btnAddRecipe" role="button">Add Recipe</a>
+               <p></p>
+               <table class="table table-condensed table-stripped table-hover" id="tblRecipe">
+                  <thead>
+                     <tr>
+                        <th>Index</th>
+                        <th>Name</th>
+                        <th>Ingredient</th>.</th>
+                        <th>Step</th>
+                        <th>Delete</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+
+
+      <!--div add recipe form ================================================================================================-->
+      <div class="well" id="divAddRecipe" style="overflow-x:auto">
+         <div class="row">
+            <div class="container">
+               <form id="frmAddRecipe">
+                  <div class="container col-md-5">
+
+                     <div>
+                        <h3 class="text-center">Enter the Recipe</h3>
+                        <hr>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="recipeName" class="control-label">Recipe Name</label><br>
+                        <input type="text" id="topic" class="control-form" placeholder="Enter your recipe name"
+                           required />
+                     </div>
+
+                     <div class="form-group">
+                        <label for="ingredient" class="control-label">Ingredients</label>
+                        <textarea class="form-control" id="ingredient" rows="8"
+                           placeholder="Enter Ingredient"></textarea>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="step" class="control-label">Steps</label>
+                        <textarea class="form-control" id="step" rows="20"
+                           placeholder="Enter the Steps Here"></textarea>
+                     </div>
+
+                     <div class="form-group">
+                        <button type="submit" class="btn">Save </button>
+                        <button type="reset" class="btn">Reset</button>
+                     </div>
+                  </div>
+
+
+               </form>
+            </div>
+         </div>
+      </div>
+      <!--div edit recipe form ================================================================================================-->
+      <div class="well" id="divEditRecipe" style="display: none">
+         <div class="row">
+            <div class="col-sm-6">
+               <form id="frmEditRecipe">
+
+                  <div class="col-lg-8 col-lg-offset-4">
+                     <h3>Edit Menu Details</h3>
+                  </div>
+
+                  <div class="form-group">
+                     <label for="topic100" class="col-lg-4 control-label">Recipe Name</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="topic100" class="control-form" placeholder="Place Recipe Name"
+                           required />
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <label for="ingredient100" class="col-lg-4 control-label">Ingredients</label>
+                     <div class="col-lg-8">
+                        <textarea class="form-control" id="ingredient100" rows="8" placeholder="Place Ingredients"
+                           required></textarea>
+
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <label for="step100" class="col-lg-4 control-label">Steps</label>
+                     <div class="col-lg-8">
+                        <textarea class="form-control" id="step100" rows="8" placeholder="Place Steps"
+                           required></textarea>
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <input type="hidden" id="recipeid" />
+                     <div class="col-lg-8 col-lg-offset-4">
+                        <button type="submit" class="btn">Update Recipe</button>
+                        <button type="reset" class="btn">Reset</button>
+                     </div>
+                  </div>
+
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <script src="js/jquery-3.2.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/signals.min.js"></script>
+   <script src="js/hasher.min.js"></script>
+   <script src="js/crossroads.min.js"></script>
+   <script src="js/bootbox.min.js"></script>
+   <script src="js/index.js"></script>
+</body>
+
+</html>

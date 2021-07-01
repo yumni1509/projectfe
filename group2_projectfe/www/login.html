@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Login Page </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/signin.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif] -->
+
+  <style>
+    body{
+      background-color: #fbd1b7;
+    }
+    .login-form {
+      margin: auto;
+    }
+
+    .login-form form {
+      margin-bottom: 15px;
+      background: #000232;
+      color: #ffffff;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .login-form h2 {
+      margin: 0 0 15px;
+    }
+
+    .form-control, .login-btn {
+      min-height: 38px;
+      border-radius: 2px;
+      background: #fbd1b7;
+    }
+
+    .input-group-addon .fa {
+      font-size: 18px;
+    }
+
+    .login-btn {
+      font-size: 15px;
+      font-weight: bold;
+      background: #b689b0;
+    }
+    .main {
+        text-align:center;
+    }
+    .marq {
+        padding-top:30px;
+        padding-bottom:30px;
+    }
+    .geek1, .geek2{
+        font-size:36px;
+        font-weight:bold;
+        color:white;
+        padding-bottom:10px;
+    }
+    
+    .geek3 {
+      color: #b689b0;
+    }
+  </style>
+</head>
+
+<body>
+ <h1 style="color: black;">E-RECIPE</h1>
+ <div class = "main">
+  <marquee class="marq" bgcolor = "#000232" direction = "left" loop="" >
+      <div class="geek2 text-center">Save Your Recipe Here</div>
+      <div class="geek3 text-center">For Your Future Reference!!!</div>
+  </marquee>
+  </div>
+  <br><br>
+  <div class="login-form">
+    <form class="form-signin" id="frmLogin">
+      <h2 class="form-signin-heading text-center">Sign in !</h2>
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" name="username" id="inputEmail" placeholder="Email Address" size="30"
+            required="required">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" size="30"
+            required="required">
+        </div>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn login-btn btn-block">Sign in</button><br>
+        <p class="text-center">Don't have an account?</p>
+        <p class="text-center"><a href="#" id="btnRegister">Register</a></p>
+        <!-- <button type="submit" class="btn login-btn btn-block" id="btnRegister">Register</button> -->
+      </div>
+    </form>
+
+  </div>
+
+  <!-- 
+  <div class="login-form">
+    <form class="form-signin" id="frmLogin">
+        <h2 class="text-center">Sign in</h2>   
+        <div class="form-group">
+        	<div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="username" id="inputEmail" placeholder="Email Address" required="required">				
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required="required">				
+            </div>
+        </div>        
+        <div class="form-group">
+            <button type="submit" class="btn btn-default login-btn btn-block">Sign in</button>
+          <button type="submit" class="btn btn-primary login-btn btn-block" id="btnRegister">Register</button>
+        </div>
+        <div class="clearfix">
+            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+            <a href="#" class="pull-right">Forgot Password?</a>
+        </div>
+		
+    </form>
+    <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p>
+</div> -->
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>
